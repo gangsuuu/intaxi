@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>HUCK_인택</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+  <link rel="import" href="header.html">
+</head>
+<body>
+  <div id="header"></div>
+  <div class="content">
+    <div id="quickMenu"></div>
+    <div></div>
+  </div>
+
+
+
+  
+  <div class="introBox">
+    <div class="introWhite"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    const introContainer = document.querySelector('.introBox')
+    let intros = []
+    let count = 5
+
+    for(let i = 0; i < count; i++){
+      let intro = document.createElement('div')
+      intro.classList.add('introBlock')
+      intro.classList.add('intro'+i)
+      intros.push(intro)
+
+      introContainer.appendChild(intro)
+    }
+    gsap.to(intros,{
+      top:0,
+      duration:0.3,
+      ease:'power2.inOut',
+      stagger:0.08,
+      onComplete : (e) => {
+        document.querySelector('.introWhite').remove()
+        for(let j = 0; j < count; j++){
+          intros = intros.reverse()
+          gsap.to(intros, {
+            top:'100%',
+            duration:0.6,
+            ease:'power4.inOut',
+            stagger:0.1,
+            onComplete: () => {
+              introContainer.remove()
+            }
+          })
+        }
+      }
+    })
+  
+
+    let page = 'index'
+    document.addEventListener("DOMContentLoaded",function(){
+      const customEvent = new CustomEvent('pageEvent', { detail: { page } });
+          document.dispatchEvent(customEvent);
+    })
+    </script>
+  <script src='/callHeader.js'></script>
+</body>
+</html>
