@@ -61,14 +61,14 @@ header {
 
 .header_fristRow {
 	width: 97%;
-	padding: 1% 1.5%;
+	padding: 0.2% 1.5%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
 .header_logo{
-	width: 170px;
+	width: 160px;
 	height: 70%;
 	object-fit: cover;
 }

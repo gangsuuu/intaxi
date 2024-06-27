@@ -1,5 +1,5 @@
 .quickMenuWrapper {
-  width: 35%;
+  width: 100%;
   height: 500px;
   overflow: hidden;
   overflow-y: scroll;
@@ -104,4 +104,96 @@
 
 .option_checked {
   color: #fff;
+}
+
+.quickExcelWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  height: 50px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4),
+              0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.excelWork{
+  display: flex;
+  gap: 30px;
+}
+.quickExcelWrapper h2{
+  font-size: 28px;
+  margin-left: 17px;
+  margin-top: 3px;
+}
+
+.excelBtnWarpper {
+  display: flex;
+  
+  gap: 7px;
+}
+.excelBtnWarpper button {
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  height: 29px;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.excelBtnWarpper button span {
+  font-weight: 200;
+  font-size: 13px;
+  background-color: transparent;
+  display: inline-block;
+  margin-top: 3px;
+  transition: 0.3s;
+}
+
+.excelHowUse{
+  /* position: relative; */
+  /* margin-top: 9px;  */
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.excelHowUse span {
+  margin-top: 3px;
+  color: rgba(0, 0, 0, .1);
+  transition: 0.3s;
+}
+
+.excelHowUse:hover {
+  border: 1px solid rgba(0, 0, 0, .6);
+}
+
+.excelHowUse:hover span{
+  color: rgba(0, 0, 0, .6);
+}
+
+.excelBtnWarpper button:hover  {
+  background-color: rgba(0,0,0, 0.6);
+}
+.excelBtnWarpper button:hover  span{
+  color: rgba( 255, 255, 255, 0.8);
+}
+.excelWho{
+  display: flex;
+  gap: 50px;
+  margin-left: 100px;
+  width: 600px;
+  overflow: hidden;
+  align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.excelWho span{
+  width: 80px;
 }

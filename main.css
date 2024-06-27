@@ -5,13 +5,13 @@
 	font-style: normal;
 }
 
-/* body{
+body{
 	-ms-overflow-style: none;
 	}
 	
  ::-webkit-scrollbar {
 	 display: none;
- } */
+ }
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -34,6 +34,7 @@ time, mark, audio, video, button {
 	vertical-align: baseline;
 	font-family: 'GmarketSansMedium';	
 	font-weight: 700;
+	box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -62,20 +63,18 @@ table {
 .content{
 	width: 100vw;
 	height: 500px;
+	display: flex;
+	justify-content: space-between;
 }
 
+.contentWrapper {
+	width: 100%;
+	flex:1;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+#quickExcel{
+	width: 100%;
+}
 
 
 

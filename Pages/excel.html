@@ -6,52 +6,108 @@
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link  href="/main.css"  rel="stylesheet" />
-  <script src='main.js'></script>
+  <script src='/public/js/excel.js'></script>
 </head>
 <body>
   <div id="header"></div>
   <div class="content">
     <div id="quickMenu"></div>
-    <div></div>
+    <div class="contentWrapper">
+      <h2>입차 Excel</h2>
+      <div class="contentContainer">    
+        <div class="content_tittle">
+          <div class="excel_howUse">
+            <div><h3>사용법</h3></div>
+            <div>
+              <dl>
+                <dt>내용 끌어오기</dt>
+                <dd>배차 관리에서 1순번 회원의 1부터 가장 마지막 회원의</dd>
+                <dd>대기중 까지 드래그하여 선택한 뒤, 해당 내용을 복사한다.</dd>
+              </dl>
+            </div> 
+          </div>
+        </div>
+        <div class="tableWrapper">
+          <div class="excelInputWrapper">
+       
+          </div>
+          <div class="excelWrapper">
+            <div class="excelT1">
+              <table class="excel_table table">
+                <h3><button id="excelPostBtn">T 1</button></h3>
+                <tbody>
+                  <tr>
+                    <th>이 름</th>
+                    <th>시 간</th>
+                  </tr>
+                  <tr class="excelTrBTn">
+                    <td><button id="excelCopyBtn">복 사 하 기</button></td>
+                    <td><button id="excelCopyBtn">복 사 하 기</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="excelT2">
+              <h3><button id="excelPostBtn">T 2</button></h3>
+              <table class="excel_table table">
+                <tbody>
+                  <tr>
+                    <th>이 름</th>
+                    <th>시 간</th>
+                  </tr>
+                  <tr class="excelTrBTn">
+                    <td><button id="excelCopyBtn">복 사 하 기</button></td>
+                    <td><button id="excelCopyBtn">복 사 하 기</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>     
+    </div>
   </div>
-  <div class="introBox">
+  <!-- <div class="introBox">
     <div class="introWhite"></div>
-  </div>
+  </div> -->
+  
+  <script src='/main.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    const introContainer = document.querySelector('.introBox')
-    let intros = []
-    let count = 5
 
-    for(let i = 0; i < count; i++){
-      let intro = document.createElement('div')
-      intro.classList.add('introBlock')
-      intro.classList.add('intro'+i)
-      intros.push(intro)
+    // const introContainer = document.querySelector('.introBox')
+    // let intros = []
+    // let count = 5
 
-      introContainer.appendChild(intro)
-    }
-    gsap.to(intros,{
-      top:0,
-      duration:0.3,
-      ease:'power2.inOut',
-      stagger:0.08,
-      onComplete : (e) => {
-        document.querySelector('.introWhite').remove()
-        for(let j = 0; j < count; j++){
-          intros = intros.reverse()
-          gsap.to(intros, {
-            top:'100%',
-            duration:0.6,
-            ease:'power4.inOut',
-            stagger:0.1,
-            onComplete: () => {
-              introContainer.remove()
-            }
-          })
-        }
-      }
-    })
+    // for(let i = 0; i < count; i++){
+    //   let intro = document.createElement('div')
+    //   intro.classList.add('introBlock')
+    //   intro.classList.add('intro'+i)
+    //   intros.push(intro)
+
+    //   introContainer.appendChild(intro)
+    // }
+    // gsap.to(intros,{
+    //   top:0,
+    //   duration:0.3,
+    //   ease:'power2.inOut',
+    //   stagger:0.08,
+    //   onComplete : (e) => {
+    //     document.querySelector('.introWhite').remove()
+    //     for(let j = 0; j < count; j++){
+    //       intros = intros.reverse()
+    //       gsap.to(intros, {
+    //         top:'100%',
+    //         duration:0.6,
+    //         ease:'power4.inOut',
+    //         stagger:0.1,
+    //         onComplete: () => {
+    //           introContainer.remove()
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
     
     let page = 'excel'
     document.addEventListener("DOMContentLoaded",function(){
