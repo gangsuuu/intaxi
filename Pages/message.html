@@ -1,60 +1,84 @@
 <html>
 	<head>
 	<link  href="/main.css"  rel="stylesheet" />
-	<script src="script.js"></script>
+	<script src="/public/js/message.js"></script>
 
 	</head>
 	<body>
 		<div id="header"></div>
-		<div class="content">
+		<div class="contentContainer">
 			<div id="quickMenu"></div>
-			<div></div>
+			<div class="content">
+				<div id="quickExcel"></div>
+				<div class="main_contentWrapper">
+					<div class="main_contentWrapper_title">
+						<h2>메세지 보내기</h2>
+						<div class="messagePushbtn">
+							<button id="messageBtn"><span>예약 붙여넣기</span></button>
+						</div>
+					</div>
+					<div class="messageWrapper">
+						<table class="messageTable">
+								<tbody>
+									<tr>
+										<th>완료</th>
+										<th>결제</th>
+										<th>탑승자</th>
+										<th>언어</th>
+										<th>시간</th>
+										<th>출발지</th>
+										<th>도착지</th>
+										<th>차량</th>
+										<th>회원</th>
+										<th>피켓</th>
+										<th>메세지</th>
+									</tr>
+									
+								</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 		</div>
-		<textarea></textarea>
-		<button>확인</button>
-		<table>
-			<tbody>
-			</tbody>
-		</table>
 
-		<div class="introBox">
+		<!-- <div class="introBox">
 			<div class="introWhite"></div>
-		</div>
+		</div> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 		<script>
-			const introContainer = document.querySelector('.introBox')
-			let intros = []
-			let count = 5
+			// const introContainer = document.querySelector('.introBox')
+			// let intros = []
+			// let count = 5
 	
-			for(let i = 0; i < count; i++){
-				let intro = document.createElement('div')
-				intro.classList.add('introBlock')
-				intro.classList.add('intro'+i)
-				intros.push(intro)
+			// for(let i = 0; i < count; i++){
+			// 	let intro = document.createElement('div')
+			// 	intro.classList.add('introBlock')
+			// 	intro.classList.add('intro'+i)
+			// 	intros.push(intro)
 	
-				introContainer.appendChild(intro)
-			}
-			gsap.to(intros,{
-				top:0,
-				duration:0.3,
-				ease:'power2.inOut',
-				stagger:0.08,
-				onComplete : (e) => {
-					document.querySelector('.introWhite').remove()
-					for(let j = 0; j < count; j++){
-						intros = intros.reverse()
-						gsap.to(intros, {
-							top:'100%',
-							duration:0.6,
-							ease:'power4.inOut',
-							stagger:0.1,
-							onComplete: () => {
-								introContainer.remove()
-							}
-						})
-					}
-				}
-			})
+			// 	introContainer.appendChild(intro)
+			// }
+			// gsap.to(intros,{
+			// 	top:0,
+			// 	duration:0.3,
+			// 	ease:'power2.inOut',
+			// 	stagger:0.08,
+			// 	onComplete : (e) => {
+			// 		document.querySelector('.introWhite').remove()
+			// 		for(let j = 0; j < count; j++){
+			// 			intros = intros.reverse()
+			// 			gsap.to(intros, {
+			// 				top:'100%',
+			// 				duration:0.6,
+			// 				ease:'power4.inOut',
+			// 				stagger:0.1,
+			// 				onComplete: () => {
+			// 					introContainer.remove()
+			// 				}
+			// 			})
+			// 		}
+			// 	}
+			// })
 			
 			let page = 'message'
 			document.addEventListener("DOMContentLoaded",function(){

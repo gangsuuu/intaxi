@@ -6,12 +6,11 @@
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <link  href="/main.css"  rel="stylesheet" />
-  <script src='/public/js/excel.js'></script>
 </head>
 <body>
   <div id="header"></div>
+  <div id="quickMenu"></div>
   <div class="content">
-    <div id="quickMenu"></div>
     <div class="contentWrapper">
       <h2>입차 Excel</h2>
       <div class="contentContainer">    
@@ -29,7 +28,7 @@
         </div>
         <div class="tableWrapper">
           <div class="excelInputWrapper">
-       
+              <button class="submit"></button>
           </div>
           <div class="excelWrapper">
             <div class="excelT1">
@@ -116,6 +115,8 @@
           document.dispatchEvent(customEvent);
     })
   </script>
+  
+  <script src='/public/js/excel.js'></script>
   <script src='/callHeader.js'></script>
 </body>
 </html>

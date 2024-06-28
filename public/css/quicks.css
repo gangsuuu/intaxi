@@ -121,11 +121,28 @@
 .excelWork{
   display: flex;
   gap: 30px;
+  justify-content: space-between;
+  width: 100%;
 }
+
+.excelWork > div {
+  width: 20px;
+  display: flex;
+}
+
+.excelFunction {
+  flex:2;
+  gap: 7px;
+}
+
 .quickExcelWrapper h2{
-  font-size: 28px;
+  font-size: 24px;
   margin-left: 17px;
   margin-top: 3px;
+  color: rgba(0, 0, 0, .6);
+}
+.quickExcelWrapper:hover h2{
+  color: rgba(0, 0, 0, .8); 
 }
 
 .excelBtnWarpper {
@@ -184,16 +201,46 @@
   color: rgba( 255, 255, 255, 0.8);
 }
 .excelWho{
+  flex: 3;
   display: flex;
-  gap: 50px;
-  margin-left: 100px;
-  width: 600px;
+  gap: 15px;
   overflow: hidden;
   align-items: center;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  font-size: 13px;
+  position: relative;
+  opacity: 0;
 }
-.excelWho span{
+.excelWho div{
   width: 80px;
+  transform: translateX(0);
+}
+
+
+
+.excelMessages {
+  position: absolute;
+}
+.excelComplete, .excelFailPast, .excelFailCopy, .excelCompletePast {
+  display: none;
+  position: fixed;
+  width: 140px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, .5);
+  bottom: 92px;
+  left: 50%;
+  transform: translateX(-50%) scale(.9);
+  align-items: center;
+  /* display: flex; */
+  opacity: 0;
+  justify-content: center;
+}
+
+.excelComplete p, .excelFailPast p, .excelFailCopy p, .excelCompletePast p {
+  position: relative;
+  margin-top: 5px;
+  color: #fff;
 }
