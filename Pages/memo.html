@@ -1,7 +1,7 @@
 <html>
 	<head>
 	<link  href="/main.css"  rel="stylesheet" />
-	<!-- <script src="/script.js"></script> -->
+	<script src="../public/js/memo.js"></script>
 
 	</head>
 	<body>
@@ -10,48 +10,169 @@
 			<div id="quickMenu"></div>
 			<div class="content">
 				<div id="quickExcel"></div>
+				<div class="memoContainer">
+					<div class="memoLists">
+						<div class="memoWrapper">
+							<div class="memo">
+								<div class="memoFirstRow">
+									<div class="memoFirstLeft">
+										<h4>제목입니다.</h4>
+									</div>
+									<div class="memoFirstRight">
+										
+										<div class="memofunction">
+											<div class="memoState"><p>진행중</p></div>
+											<div class="memoComments"><p>0</p></div>
+											<div class="memoStateFix"><p>고정</p></div>
+										</div>
+									</div>
+								</div>
+								<div class="memoHashTagWrapper">
+									<div class="memoHashTag" id="memoBook" ><p>#예약</p></div>
+									<div class="memoHashTag" id="memoBook" ><p>#노쇼</p></div>
+									<div class="memoHashTag" id="memoDriver" ><p>#하경수</p></div>
+								</div>
+								<div class="memoinfo">
+									<div class="memoFirstWriter">
+										<p>작성자</p>
+									</div><p>/</p><div class="memoFirstDay">
+										<p>2024_07_01</p>
+									</div>
+								</div>
+								<div class="memoContent">
+									<div class="memoContent__inner">
+										<p>대충 내용입니다.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="memoRight">
+						<div class="memoCRUD_buttons">
+							<div class="btn memoCRUD_btn__create"><span>작성</span></div>
+							<div class="memoCRUD_btn_created">
+								<div class="btn memoCRUD_btn__delete"><span>삭제</span></div>
+								<div class="btn memoCRUD_btn__edit"><span>수정</span></div>
+								<div class="btn memoCRUD_btn__submit"><span>등록</span></div>
+							</div>
+						</div>
+						<div class="memoRightContent">
+							<div class="memoDetailWrapper">
+								<div class="memoDetail_title">
+									<h3>제목임</h3>
+								</div>
+								<div class="memoDetail_hashtags">
+									<div class="memoHashTag" id="memoBook" ><p>#예약</p></div>
+									<div class="memoHashTag" id="memoBook" ><p>#노쇼</p></div>
+									<div class="memoHashTag" id="memoDriver" ><p>#하경수</p></div>
+								</div>
+								<div class="memoDetail_info">
+									<div class="memoDetailWriter">
+										<p>작성자</p>
+									</div>
+									<p>/</p>
+									<div class="memoDetailDay">
+										<p>2024_07_01</p>
+									</div>
+								</div>
+								<div class="memoDetail_contentWrapper">
+									<div class="memoDetail_content"></div>
+								</div>
+							</div>
+								
+							<div class="memoDetail_reviewContainer">
+
+								<div class="memoDetail_review__wrapper">
+									<div class="memoDetail_reivew__first">
+										<div class="memoDetail_review__info">
+											<div class="memoDetail_review__writer">
+												<p>작성자</p>
+											</div>
+											<p>/</p>
+											<div class="memoDetail_review__day">
+												<p>작성날자</p>
+											</div>
+										</div>
+										<div class="memoDetail_review__buttons hide">
+											<div class="btn memoDetail_review_edit"><span>수정하기</span></div>
+											<div class="btn memoDetail_review_remove"><span>삭제하기</span></div>
+										</div>
+									</div>
+									<div class="memoDetail_reivew__second">
+										<div class="memoDetail_review_content">
+											내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다내용입니다
+										</div>
+									</div>
+								</div>
+
+								<div class="memoDetail_review_add">
+									<p>댓글달기</p>
+									<textarea name="review" id="review"></textarea>
+									<div class="memoDetail_review_addBtn">
+										<button class="btn"><span>등록</span></button>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="memoCRUDWrapper">
+								<div class="memoCRUD_inputs">
+									<div class="memoCRUD_inputs_titleWrapper">
+										<input type="text" placeholder="제목입력">
+									</div>
+									<div class="memoCRUD_inputs_hashtags">
+										<input type="text" placeholder="해쉬태그입력">
+									</div>
+									<div class="memoCRUD_inputs_text">
+										<textarea name="memo" id="memoCRUD_textarea" placeholder="내용입력"></textarea>
+									</div>
+								</div>
+						</div>
+						</div>
+				</div>
 			</div>
 		</div>
 
 
-		<div class="introBox">
+		<!-- <div class="introBox">
 			<div class="introWhite"></div>
-		</div>
+		</div> -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 		<script>
-			const introContainer = document.querySelector('.introBox')
-			let intros = []
-			let count = 5
+			// const introContainer = document.querySelector('.introBox')
+			// let intros = []
+			// let count = 5
 	
-			for(let i = 0; i < count; i++){
-				let intro = document.createElement('div')
-				intro.classList.add('introBlock')
-				intro.classList.add('intro'+i)
-				intros.push(intro)
+			// for(let i = 0; i < count; i++){
+			// 	let intro = document.createElement('div')
+			// 	intro.classList.add('introBlock')
+			// 	intro.classList.add('intro'+i)
+			// 	intros.push(intro)
 	
-				introContainer.appendChild(intro)
-			}
-			gsap.to(intros,{
-				top:0,
-				duration:0.3,
-				ease:'power2.inOut',
-				stagger:0.08,
-				onComplete : (e) => {
-					document.querySelector('.introWhite').remove()
-					for(let j = 0; j < count; j++){
-						intros = intros.reverse()
-						gsap.to(intros, {
-							top:'100%',
-							duration:0.6,
-							ease:'power4.inOut',
-							stagger:0.1,
-							onComplete: () => {
-								introContainer.remove()
-							}
-						})
-					}
-				}
-			})
+			// 	introContainer.appendChild(intro)
+			// }
+			// gsap.to(intros,{
+			// 	top:0,
+			// 	duration:0.3,
+			// 	ease:'power2.inOut',
+			// 	stagger:0.08,
+			// 	onComplete : (e) => {
+			// 		document.querySelector('.introWhite').remove()
+			// 		for(let j = 0; j < count; j++){
+			// 			intros = intros.reverse()
+			// 			gsap.to(intros, {
+			// 				top:'100%',
+			// 				duration:0.6,
+			// 				ease:'power4.inOut',
+			// 				stagger:0.1,
+			// 				onComplete: () => {
+			// 					introContainer.remove()
+			// 				}
+			// 			})
+			// 		}
+			// 	}
+			// })
 			
 			let page = 'memo'
 			document.addEventListener("DOMContentLoaded",function(){

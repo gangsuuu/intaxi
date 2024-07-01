@@ -219,6 +219,347 @@ table {
 	text-decoration-color: rgba(255, 0, 0, 0.6); */
 }
 
+.memoContainer {
+	display: flex;
+	
+}
+.memoLists {
+	flex:1;
+	/* padding: 10px 15px; */
+	/* height: 300px; */
+	border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+.memoWrapper {
+	width: 100%;
+	padding: 10px 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	transition: 0.3s;
+}
+
+.memoWrapper:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.memo {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 5px;   
+	width: 100%;
+}
+
+.memo p, .memo h4{
+	color: rgba(55, 69, 83, 0.7);
+	transition: 0.3s;
+}
+.memo:hover p, .memo:hover h4{
+	color: rgba(0, 0, 0, 1);
+}
+
+.memoFirstRow{
+	display: flex;
+	justify-content: space-between;
+}
+
+.memoFirstLeft {
+	display: flex;
+	gap: 20px;
+	align-items: flex-end;
+}
+
+.memoFirstLeft h4{
+	font-size: 24px;
+	width: 350px;
+}
+
+.memofunction{
+	gap: 10px;
+	display: flex;
+	justify-content: end;
+}
+
+.memoinfo{
+	display: flex;
+	gap: 20px;
+}
+.memoFirstWriter{
+	display: flex;
+	gap: 8px;
+}
+
+
+
+.memoFirstDay {
+	display: flex;
+	gap: 8px;
+}
+
+.memoFirstRight {
+	display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    gap: 50px;
+}
+
+.memoHashTagWrapper {
+	display: flex;
+	gap: 10px;
+}
+
+.memoHashTag {
+	border-radius: 10px;
+	padding: 4px 6px;
+}
+.memoHashTag p {
+	margin-top: 3px;
+}
+#memoBook {
+	background-color: skyblue;
+}
+#memoDriver {
+	background-color: coral;
+}
+
+.memoContent{
+	width: 100%;
+}
+
+.memoContent__inner {
+	width: 100%;
+	height: 110px;
+	padding: 2% 1.5%;
+	border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.memoRight {
+	position: relative;
+	overflow: hidden;
+	width: 600px;
+}
+
+.memoRightContent {
+	position: relative;
+}
+
+.memoCRUDWrapper {
+	position: absolute;
+	top: 0;
+	left: 100%;
+	transition: .3s left;
+	width: 600px;
+}
+
+.memoCRUD_buttons {
+	background-color: #374553;
+	width: 100%;
+	height: 55px;
+	padding: 0 2%;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.memoCRUD_buttons .btn{
+	padding: 10px 5px;
+	border-radius: 2px;
+	height: 29px;
+	padding: 5px 14px;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.memoCRUD_buttons .btn span{
+	font-weight: 200;
+	font-size: 15px;
+	background-color: transparent;
+	display: inline-block;
+	margin-top: 5px;
+	transition: 0.3s;
+	color: black;
+}
+.memoCRUD_btn_created {
+	display: flex;
+	gap: 5px;
+}
+
+.memoCRUD_inputs{
+	position: absolute;
+	width: 100%;
+	background: white;
+}
+
+.memoCRUD_inputs_titleWrapper, .memoCRUD_inputs_hashtags{
+	width: 100%;
+	padding: 1% 2%;
+}
+
+.memoCRUD_inputs_titleWrapper input, .memoCRUD_inputs_hashtags input {
+	width: 100%;
+	padding: 1%;
+	font-size: 18px;
+	font-family: 'GmarketSansMedium';
+}
+.memoCRUD_inputs_hashtags {
+
+}
+.memoCRUD_inputs_text{
+	width: 100%;
+	padding: 1% 2%;
+}
+.memoCRUD_inputs_text textarea{
+	width: 100%;
+	height: 260px;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: 'GmarketSansMedium';
+	padding: 1%;
+}
+.memoCRUD_inputs_titleWrapper input:focus, 
+.memoCRUD_inputs_hashtags input:focus,
+.memoCRUD_inputs_text textarea:focus{
+	/* border:none; */
+	outline:1px solid rgba(0, 0, 0.1);
+}
+
+
+.memoDetailWrapper{
+	position: relative;
+	width: 100%;
+	left: 0;
+	padding: 0 2% 2% 2%;
+	border: 1px solid rgba(0, 0, 0, .1);
+	transition: .3s left;
+}
+
+.memoDetail_title h3{
+	font-size: 24px;
+	padding: 15px 0;
+}
+.memoDetail_hashtags{
+	display: flex;
+	gap: 5px;
+}
+
+.memoDetail_info{
+	display: flex;
+	padding: 10px 0; 
+	   gap: 10px;
+}
+
+
+.memoDetail_content {
+	width: 100%;
+	height: 260px;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: 'GmarketSansMedium';
+	padding: 1%;
+	border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.memoDetail_review_add {
+	padding: 20px 0;
+}
+.memoDetail_review_add p {
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.memoDetail_review_add textarea {
+	width: 100%;
+	height: 70px;
+	resize: none;
+	font-size: 18px;
+	font-weight: 400;
+	font-family: 'GmarketSansMedium';
+	padding: 1%;
+}
+.memoDetail_review_addBtn {
+	text-align: right;
+}
+.memoDetail_review_addBtn .btn{
+	margin-top: 5px;
+	padding: 10px 5px;
+	border-radius: 2px;
+	height: 29px;
+	padding: 5px 14px;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.memoDetail_review_addBtn .btn span{
+	display: inline-block;
+	margin-top: 4px;
+}
+.memoDetail_review_add {
+	width: 100%;
+	padding: 2% 2%;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.memoDetail_reviewContainer {
+	position: relative;
+	left: 0;
+	transition: .3s left;
+}
+.memoDetail_review__wrapper{
+	width: 100%;
+	padding: 1% 2%;
+}
+.memoDetail_reivew__first {
+	display: flex;
+	justify-content: space-between;
+}
+
+.memoDetail_review__info {
+	display: flex;
+	align-items: flex-end;
+	gap: 12px;
+}
+.memoDetail_review__info p {
+	font-size: 20px;
+}
+.memoDetail_review__buttons {
+	display: flex;
+	align-items: flex-end;
+	gap: 4px;
+}
+.memoDetail_reivew__second {
+	width: 100%;
+	margin-top: 5px;
+}
+.memoDetail_review_content {
+	width: 100%;
+	padding: 2%;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.memoDetail_review__buttons .btn{
+	margin-top: 5px;
+	padding: 10px 5px;
+	border-radius: 2px;
+	height: 29px;
+	padding: 5px 14px;
+	cursor: pointer;
+	transition: 0.3s;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+.memoDetail_review__buttons .btn span{
+	display: inline-block;
+	margin-top: 4px;
+}
+
+.inputsActive{
+	left: 0;
+}
+.inputsActive_right{
+	left: -100%;
+}
 
 
 
