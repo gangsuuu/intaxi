@@ -481,7 +481,10 @@ table {
 .memoDetail_review_addBtn {
 	text-align: right;
 }
-.memoDetail_review_addBtn .btn{
+.memoDetail_review_addBtn .btn, 
+.userAdmin_btnWrapper .btn,
+.userAdmin_create_buttons .btn
+{
 	margin-top: 5px;
 	padding: 10px 5px;
 	border-radius: 2px;
@@ -491,7 +494,10 @@ table {
 	transition: 0.3s;
 	background-color: rgba(0, 0, 0, 0.2);
 }
-.memoDetail_review_addBtn .btn span{
+.memoDetail_review_addBtn .btn span,
+ .userAdmin_btnWrapper .btn span,
+ .userAdmin_create_buttons .btn span
+ {
 	display: inline-block;
 	margin-top: 4px;
 }
@@ -560,6 +566,185 @@ table {
 .inputsActive_right{
 	left: -100%;
 }
+.btn_hide {
+	display: none;
+}
+
+.memoRight button:hover, 
+.userAdmin_btnWrapper button:hover,
+.userAdmin_create_buttons .btn:hover
+{
+  background-color: rgba(0,0,0, 0.6);
+}
+.memoRight button:hover  span,
+.userAdmin_btnWrapper button:hover span,
+.userAdmin_create_buttons .btn:hover span
+{
+  color: rgba( 255, 255, 255, 0.8);
+}
+
+/***
+		other
+****/
+
+.otherContainer {
+	width: 100%;
+}
+
+.otherContainer_nav{
+	background-color: rgb(59, 74, 88);
+}
+
+.otherContainer_navLists {
+	width: 100%;
+	height: 40px;
+	padding: 10px 10px;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	gap: 20px;
+}
+
+.ohterContainer_list, .ohterContainer_list_slash {
+	font-size: 20px;
+	letter-spacing: 0.8px;
+	color: #aaa;
+	opacity: 0.8;
+	transition: color 0.3s;
+}
+.ohterContainer_list:hover  {
+	color: #fff;
+}
+
+.userAdmin {
+	position: relative;
+	width: 100%;
+	margin-top: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.userAdmin_wrapper {
+	width: 500px;
+}
+
+.userAdmin_btnWrapper{
+	text-align: right;
+	margin-bottom: 5px;
+}
+.userAdmin_Table {
+	width: 100%;
+}
+.userAdmin_Table table {
+	width: 100%;
+}
+.userAdmin_Table table tr th {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: #374553;
+	vertical-align : middle;
+	height: 40px;
+}
+.userAdmin_Table table tr th span {
+	display: inline-block;
+	font-size: 20px;
+	color: #fff;
+	opacity: 0.9;
+	margin-top: 3px;
+	letter-spacing: 2px;
+	font-weight: 400;
+}
+
+.userAdmin_Table table tr td {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	vertical-align : middle;
+	text-align: center;
+	height: 40px;
+}
+
+.userAdmin_Table table tr td span {
+	display: inline-block;
+	font-size: 20px;
+	margin-top: 3px;
+	font-weight: 500;
+}
+
+
+.userAdmin_createWrapper{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba( 255, 255, 255, 0.4);	
+	display: none;
+}
+
+.userAdmin_create{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	border: 1px solid rgb(59, 74, 88);
+	border-radius: 10px;
+}
+
+.userAdmin_createHead {
+	height: 30px;
+	background-color: #374553;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	position: relative;
+}
+.userAdmin_createHead h3 {
+	position: relative;
+	color: #fff;
+	font-weight: 400;
+	letter-spacing: 0.6px;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+}
+.userAdmin_createContent {
+	background-color: white;
+	border: 1px solid #425262;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: relative;
+}
+
+.userAdmin_create_name {
+	display: flex;
+	justify-content: center;
+	padding: 1%;
+}
+.userAdmin_create_name input{
+	outline: none;
+	width: 95%;
+	padding: 0 2%;
+	height: 30px;
+	border: 1px solid #000;
+	font-family: 'GmarketSansMedium';
+}
+.userAdmin_create_buttons {
+	text-align: right;
+	padding: 1% 2%;
+}
+
+.show_modal {
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 

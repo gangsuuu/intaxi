@@ -101,7 +101,11 @@ header {
   transition: color 0.25s;
 }
 
-
+.nav_warpper {
+	display: flex;
+	gap: 10px;	
+	align-items: center;
+}
 .nav_warpper a {
 	text-decoration: none;
 }
@@ -117,3 +121,85 @@ a {
 .header_active a:visited{
 	color:white
 }
+
+.currentUserWrapper {
+	display: flex;
+	gap: 5px;
+}
+
+.userChange {
+	position: relative;
+}
+.userChangeBtn {
+	font-size: 12px;
+	cursor: pointer;
+	transition: .15s color;
+}
+.userChangeBtn:hover {
+	color:#fff;
+}
+
+.currentUser {
+	font-size: 16px;
+}
+
+.currentUser p {
+	color: #FF93AC;
+}
+
+.userChangeModal {
+	position: absolute;
+	top: 20px;
+	left: -10px;
+	width: 120px;
+	height: 900px;
+	overflow: hidden;
+	
+}
+
+.changeUserLists {
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.changeUserList {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 21px;
+	width: 100%;
+	height: 40px;
+	letter-spacing: 3px;
+	color: rgba(255,255,255, .5);
+	border: 2px solid rgba(0, 0, 0, 0.7);
+	background-color: #587089;
+	border-top: none;
+	transition: .2s;
+	cursor: pointer;
+	z-index: 999;
+
+	top: -500px;
+}
+.changeUserList:first-child {
+	border-top: 2px solid rgba(0, 0, 0, 0.7);;
+}
+
+.changeUserList span{
+	padding: 10px 5px;
+	font-size: 21px;
+	letter-spacing: 3px;
+	transition: .2s;
+}
+
+.changeUserList:hover {
+	background-color: #304052;
+}
+
+.changeUserList:hover span{
+	color: #FF93AC;
+}
+

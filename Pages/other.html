@@ -5,55 +5,107 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Page Title</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link  href="/main.css"  rel="stylesheet" />
-  <script src='main.js'></script>
+  <link  href="../main.css"  rel="stylesheet" />
+  <script src='../public/js/other.js'></script>
 </head>
 <body>
   <div id="header"></div>
-  <div class="content">
+  <div class="contentContainer">
     <div id="quickMenu"></div>
-    <div></div>
+    <div class="content">
+      <div id="quickExcel"></div>
+      <div class="otherContainer">
+        
+        <div class="otherContainer_nav">
+          <div class="otherContainer_navLists">
+            <div class="ohterContainer_list">사용자정리</div>
+            <div class="ohterContainer_list_slash">사용자정리</div>
+            <div class="ohterContainer_list">회원DB정리</div>
+          </div>
+        </div>
+        <section class="userAdmin">
+          <div class="userAdmin_wrapper">
+            <div class="userAdmin_btnWrapper">
+              <button class="btn" id="userCreate"><span>유저등록</span></button>
+            </div>
+            <div class="userAdmin_Table">
+              <table>
+                <tbody>
+                  <tr>
+                    <th><span>유저</span></th>
+                    <th><span>등록날짜</span></th>
+                    <th><span>계정상태</span></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="userAdmin_createWrapper">
+            <div class="userAdmin_create">
+              <div class="userAdmin_createHead">
+                <h3>유저등록하기</h3>
+              </div>
+              <div class="userAdmin_createContent">
+                <div class="userAdmin_create_name">
+                  <input name="userCreate"type="text" placeholder="사용자 이름을 적어주세요"></input>
+                </div>
+                <div class="userAdmin_create_buttons">
+                  <button class="btn" id="userCancel"><span>취소</span></button>
+                  <button class="btn" id="userSubmit"><span>등록</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
   </div>
 
 
-  <div class="introBox">
+
+
+
+  <!-- <div class="introBox">
     <div class="introWhite"></div>
-  </div>
+  </div> -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script>
-    const introContainer = document.querySelector('.introBox')
-    let intros = []
-    let count = 5
+    // const introContainer = document.querySelector('.introBox')
+    // let intros = []
+    // let count = 5
 
-    for(let i = 0; i < count; i++){
-      let intro = document.createElement('div')
-      intro.classList.add('introBlock')
-      intro.classList.add('intro'+i)
-      intros.push(intro)
+    // for(let i = 0; i < count; i++){
+    //   let intro = document.createElement('div')
+    //   intro.classList.add('introBlock')
+    //   intro.classList.add('intro'+i)
+    //   intros.push(intro)
 
-      introContainer.appendChild(intro)
-    }
-    gsap.to(intros,{
-      top:0,
-      duration:0.3,
-      ease:'power2.inOut',
-      stagger:0.08,
-      onComplete : (e) => {
-        document.querySelector('.introWhite').remove()
-        for(let j = 0; j < count; j++){
-          intros = intros.reverse()
-          gsap.to(intros, {
-            top:'100%',
-            duration:0.6,
-            ease:'power4.inOut',
-            stagger:0.1,
-            onComplete: () => {
-              introContainer.remove()
-            }
-          })
-        }
-      }
-    })
+    //   introContainer.appendChild(intro)
+    // }
+    // gsap.to(intros,{
+    //   top:0,
+    //   duration:0.3,
+    //   ease:'power2.inOut',
+    //   stagger:0.08,
+    //   onComplete : (e) => {
+    //     document.querySelector('.introWhite').remove()
+    //     for(let j = 0; j < count; j++){
+    //       intros = intros.reverse()
+    //       gsap.to(intros, {
+    //         top:'100%',
+    //         duration:0.6,
+    //         ease:'power4.inOut',
+    //         stagger:0.1,
+    //         onComplete: () => {
+    //           introContainer.remove()
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
     
     let page = 'other'
     document.addEventListener("DOMContentLoaded",function(){

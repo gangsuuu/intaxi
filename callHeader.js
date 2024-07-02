@@ -30,5 +30,10 @@ async function importPage(target,target2,target3) {
   script.src = '/quickExcel.js'
   script.async = false;
   document.head.appendChild(script)
+
+  const headerScript = document.createElement('script')
+  headerScript.src = '/header.js'
+  headerScript.async = false;
+  document.head.appendChild(headerScript)
 }
 

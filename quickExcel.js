@@ -6,6 +6,7 @@ const excelFailCopy = document.querySelector(".excelFailCopy")
 const excelCompletePast = document.querySelector(".excelCompletePast")
 const excelWho = document.querySelector(".excelWho")
 
+
 let excelInfos = []
 let excelInfo = {}
 excelPastbtn.addEventListener('click',function(){
