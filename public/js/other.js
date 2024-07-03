@@ -10,12 +10,18 @@ document.addEventListener('DOMContentLoaded',() => {
   const showUser = () => {
     let user = localStorage.getItem('user')
     if(user == null) return 
+    const userlist = document.querySelectorAll('.userlist')
+    if(userlist !== null){
+      console.log('test');
+      userlist.forEach(list => list.remove())
+    }
 
     const tbody = userAdmin_Table.querySelector('tbody')
     user = JSON.parse(user)
     
     user.forEach((text) => {
       let tr = document.createElement('tr')
+      tr.classList.add('userlist')
       for(let i = 0; i < 3; i++){
         let td = document.createElement('td')
         let span = document.createElement('span')
@@ -46,8 +52,8 @@ document.addEventListener('DOMContentLoaded',() => {
   const userSubmit = () => {
     let v = inputUserCreate.value;
     if(v == '')  {
-      // alert('사용자 이름을 입력해주세요') 
-      // return;
+      alert('사용자 이름을 입력해주세요') 
+      return;
     }
 
     let user = localStorage.getItem('user')
@@ -71,7 +77,15 @@ document.addEventListener('DOMContentLoaded',() => {
       user.push(item)
     }
     user = JSON.stringify(user)
-    localStorage.setItem('user',user)
+    
+    try {
+      localStorage.setItem('user',user)
+      alert('등록성공')
+         showUser()
+      toggleCreateUserModal()
+    } catch (error) {
+      alert('등록실패')
+    }
 
   }
 

@@ -190,6 +190,8 @@ a {
 
 .changeUserList span{
 	padding: 10px 5px;
+	width: 100%;
+	text-align: center;
 	font-size: 21px;
 	letter-spacing: 3px;
 	transition: .2s;

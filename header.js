@@ -11,7 +11,6 @@ const ShowHeaderUser = () => {
   let user = localStorage.getItem('user')
   let logined = localStorage.getItem('logined')
   
-  
   user = JSON.parse(user)
   if(logined == null){
     logined = user[0].name
@@ -19,16 +18,18 @@ const ShowHeaderUser = () => {
     logined = JSON.parse(logined)
     logined = logined.name
   }
-
-
+  currentUser.innerHTML = ''
+  changeUserLists.innerHTML = ''
   let p = document.createElement('p')
   p.innerHTML = logined
   currentUser.appendChild(p)
+
 
   user.forEach(element => {
     const div = document.createElement('div')      
     const span = document.createElement('span')      
     div.classList.add('changeUserList')
+    span.dataset.name = element.name
     span.innerHTML = element.name
     div.appendChild(span)
     changeUserLists.appendChild(div)
@@ -37,8 +38,10 @@ const ShowHeaderUser = () => {
   changeUserList = document.querySelectorAll('.changeUserList')
 
   changeUserList.forEach(div => {
-    div.addEventListener('click',() => {
-
+    div.addEventListener('click',(e) => {
+      let name = e.target.dataset.name
+      changeLogined(name)
+      showUserLists()
     })
   })
 
@@ -46,7 +49,12 @@ const ShowHeaderUser = () => {
 
 
 
-
+const changeLogined = (n) => {
+  let name = {name: n}
+  name = JSON.stringify(name)
+  localStorage.setItem('logined',name)
+  ShowHeaderUser()
+}
 
 const showUserLists = () => {
   changeUserList = document.querySelectorAll('.changeUserList')
