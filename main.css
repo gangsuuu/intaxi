@@ -7,6 +7,8 @@
 
 body{
 	-ms-overflow-style: none;
+	height: 100vh;
+	overflow: hidden;
 	}
 	
  ::-webkit-scrollbar {
@@ -67,7 +69,8 @@ table {
 .contentContainer {
 	display: flex;
 	justify-content: space-between;	
-
+	height: 93vh;
+	overflow: hidden;
 }
 
 
@@ -221,13 +224,16 @@ table {
 
 .memoContainer {
 	display: flex;
-	
+	height: 100%;
+	overflow: hidden;
 }
 .memoLists {
-	flex:1;
+	flex: 1;
+	height: 100%;
 	/* padding: 10px 15px; */
 	/* height: 300px; */
 	border-right: 1px solid rgba(0, 0, 0, .1);
+	overflow: scroll;
 }
 
 .memoWrapper {
@@ -279,6 +285,11 @@ table {
 	justify-content: end;
 }
 
+
+.memoState, .memoStateFix{
+	cursor: pointer;
+}
+
 .memoinfo{
 	display: flex;
 	gap: 20px;
@@ -327,15 +338,17 @@ table {
 
 .memoContent__inner {
 	width: 100%;
-	height: 110px;
+	height: 100px;
 	padding: 2% 1.5%;
 	border: 1px solid rgba(0, 0, 0, .1);
 }
 
 .memoRight {
 	position: relative;
-	overflow: hidden;
+	overflow: scroll;
 	width: 600px;
+	height: 100%;
+
 }
 
 .memoRightContent {
@@ -582,6 +595,24 @@ table {
 {
   color: rgba( 255, 255, 255, 0.8);
 }
+
+.memoWrapper.memoActive {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-bottom: 1px solid rgba(0, 0, 0, .3);
+	border-top: 1px solid rgba(0, 0, 0, .3);
+}
+.memoWrapper.memoActive p,
+.memoWrapper.memoActive h4
+{
+	color: #000;
+}
+
+.memoState:hover p, .memoStateFix:hover p{
+	color: red;
+}
+
+
+
 
 /***
 		other
