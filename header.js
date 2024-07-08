@@ -14,6 +14,15 @@ const ShowHeaderUser = () => {
   user = JSON.parse(user)
   if(logined == null){
     logined = user[0].name
+
+    let name = {
+      name :user[0].name
+    }
+    try {
+      localStorage.setItem('logined', JSON.stringify(name))
+    } catch (error) {
+      
+    }
   } else {
     logined = JSON.parse(logined)
     logined = logined.name

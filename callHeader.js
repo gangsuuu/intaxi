@@ -14,6 +14,8 @@ async function importPage(target,target2,target3) {
     if(target != 'index'){
       slash = '/'
     }
+    
+  console.log(target3);
   document.querySelector('#' + target).innerHTML = await fetchHtmlAsText(slash + target + '.html');
   document.querySelector('#' + target2).innerHTML = await fetchHtmlAsText(slash + target2 + '.html');
   document.querySelector('#' + target3).innerHTML = await fetchHtmlAsText(slash + target3 + '.html');

@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded',function () {
   const deletelbtn = document.querySelector('.memoCRUD_btn__delete')
   const editlbtn = document.querySelector('.memoCRUD_btn__edit')
   const submitlbtn = document.querySelector('.memoCRUD_btn__submit')
+  const reviewSubmitBtn = document.querySelector('.memoDetail_review_addBtn')
   const memoCRUDWrapper = document.querySelector('.memoCRUDWrapper')
   const memoDetailWrapper = document.querySelector('.memoDetailWrapper')
   const memoDetail_reviewContainer = document.querySelector('.memoDetail_reviewContainer')
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded',function () {
   const hashtags = document.querySelector("input[name='hashtags']")
   const content = document.querySelector("textarea[name='content']")
   const title = document.querySelector("input[name='title']")
+  const reviewInput = document.querySelector("textarea[name='review']")
 
   const memoDetail_title = document.querySelector(".memoDetail_title")
   const memoDetail_hashtags = document.querySelector(".memoDetail_hashtags")
@@ -27,6 +29,7 @@ document.addEventListener('DOMContentLoaded',function () {
     submitlbtn.addEventListener(('click'),submitMemo)
     deletelbtn.addEventListener(('click'),deleteMemo)
     hashtags.addEventListener('keypress',hashtagKeyPress)
+    reviewSubmitBtn.children[0].addEventListener('click',reviewSubmit)
   }
 
 
@@ -65,7 +68,6 @@ document.addEventListener('DOMContentLoaded',function () {
     var date = d.getDate();
     let time = year +'-' + month +'-'+ date
 
-
     let v = {
       title : tv,
       hashtags : hv,
@@ -74,6 +76,7 @@ document.addEventListener('DOMContentLoaded',function () {
       state : 'play',
       data : time,
       writer : user.name,
+      review: [],
       uuid : generateUUID()
     }
 
@@ -138,6 +141,7 @@ document.addEventListener('DOMContentLoaded',function () {
         memoWrapper.classList.add('memoActive')
         actived = memoWrapper
         changeDetailUI(item.uuid)
+        showMemos(item.uuid)
       }
 
       const memo = document.createElement('div')
@@ -236,8 +240,6 @@ document.addEventListener('DOMContentLoaded',function () {
       memoinfo.appendChild(memoFristWriter)
       memoinfo.appendChild(memoinfoP)
       memoinfo.appendChild(memoFristDay)
-
-
 
       //4층
       const memoContent = document.createElement('div')
@@ -366,6 +368,32 @@ document.addEventListener('DOMContentLoaded',function () {
     showMemos()
   }
 
+  function reviewSubmit (){
+    let v = reviewInput.value
+    // if(v == '') return
+    let items = localStorage.getItem('memo')
+    items = JSON.parse(items)
+    try {
+      items.forEach(item => {
+        if(item.uuid == currentUuid){
+          if(item.review == null){
+            item.review = [v]
+          } else {
+            item.review.push(v)
+          }
+        }
+      })
+      showReview()
+      localStorage.setItem('memo',JSON.stringify(items))
+    } catch (error) {
+      // alert('등록실패')
+      return
+    }
+  }
+
+  function showReview (){
+
+  }
   function generateUUID() {
     let dt = new Date().getTime();
     const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
